@@ -8,8 +8,7 @@
 	"images":[{
 		"public_id":"sample image",
 		"url":"sample url"
-	}
-	]
+	}]
 }
 
 
@@ -17,4 +16,4 @@
 http://localhost:4000/api/v1/product/new                       post
 http://localhost:4000/api/v1/products                          get
 http://localhost:4000/api/v1/product/628146b7daa3707f6399879a  put
-http://localhost:4000/api/v1/product/628146b7daa3707f6399879a  delete
+http://localhost:4000/api/v1/product/628146b7daa3707f6399879a  delete/getDetails
