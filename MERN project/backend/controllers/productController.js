@@ -62,3 +62,19 @@ exports.deletaProduct = async(req, res, next)=>{
      })
 
 }
+
+
+exports.getProductDetails = async(req, res, next)=>{
+     const product = await Product.findById(req.params.id);
+
+     if(!product){
+          return res.status(200).json({
+               success :true,
+               message:"Product not found"
+          })
+     }
+     res.status(200).json({
+          success:true,
+          product
+     })
+}
