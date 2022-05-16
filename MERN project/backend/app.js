@@ -2,9 +2,9 @@ const express = require("express");
 const app = express();
 const bodyParser = require('body-parser');
 
+const errorMiddleware = require("./middleware/error");
+
 app.use(express.json());
-
-
 
 // app.set('PORT', process.env.PORT || 4000); app.get('PORT');
 const dotenv = require('dotenv');
@@ -14,10 +14,12 @@ dotenv.config({ path: 'backend/config/config.env' });
 const connectDatabase = require('./config/database');
 connectDatabase();
 
-
-
 const product = require('./routes/productRoute');
 
 app.use("/api/v1", product);
+
+//middleware use
+app.use(errorMiddleware);
+
 
 module.exports = app;
