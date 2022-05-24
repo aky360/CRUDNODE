@@ -20,7 +20,7 @@
 
 
 //so use use spread operator
-//const variableAny = {...this.Variable};                //now the value is copied into the variableAny and no changes reflect into the js object this.Variable when we                                                            //change into variableAny
+//const variableAny = {...this.Variable};                //now the value is copied into the variableAny and no changes reflect into the js object this.Variable when we change into variableAny
 
 
 http://localhost:4000/api/v1/product/new                       post
