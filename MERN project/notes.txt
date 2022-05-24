@@ -16,7 +16,7 @@
 /*notes === >>  in nested for loop; in this case break keyword breaks the inner loop and pointer goes to the outer loop then again the program execution starts from the outer loop*/
 
 //const variableAny = this.Variable;                     // this.Variable returns the reference or addresss of variable(which is object)
-                                                         //in javascript all object is pass through the reference.so when we change something then it changes reflect                                                              //into the original object so that's why we use spread operator to copy the object value into the other varable                                                          //in js
+                                                         //in javascript all object is pass through the reference.so when we change something then it changes reflect into the original object so that's why we use spread operator to copy the object value into the other variable in js
 
 
 //so use use spread operator
