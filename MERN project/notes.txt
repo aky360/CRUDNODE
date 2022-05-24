@@ -13,6 +13,10 @@
 
 
 
+/*notes === >>  in nested for loop; in this case break keyword breaks the inner loop and pointer goes to the outer loop then again the program execution starts from the outer loop*/
+
+
+
 http://localhost:4000/api/v1/product/new                       post
 http://localhost:4000/api/v1/products                          get
 http://localhost:4000/api/v1/product/628146b7daa3707f6399879a  put
