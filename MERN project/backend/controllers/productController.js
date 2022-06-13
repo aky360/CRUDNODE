@@ -1,6 +1,7 @@
 const Product = require("../models/productModel");
 const ErrorHandler = require("../utils/errorHandler");
 const catchAsyncError = require("../middleware/catchAsyncError");
+const ApiFeatures = require("../utils/apifeatures");
 
 
 exports.createProduct = catchAsyncError(async (req, res, next) => {
@@ -12,13 +13,43 @@ exports.createProduct = catchAsyncError(async (req, res, next) => {
      });
 });
 
-exports.getAllProducts = catchAsyncError(async (req, res, next) => {
-     const products = await Product.find({}); 
+// exports.getAllProducts = catchAsyncError(async (req, res, next) => {
+
+//      const apiFeature = new ApiFeatures(Product.find({}), req.query).search();
+//      const products = await apiFeature.query;
+//      console.log(products);
+//      res.status(200).json({
+//           success: true,
+//           products
+//      });
+// });
+
+
+
+exports.getAllProducts = catchAsyncError(async(req, res, next) => {
+     const resultPerPage = 8;
+     const productsCount = await Product.countDocuments();
+   
+     const apiFeature = new ApiFeatures(Product.find(), req.query)
+       .search()
+       .filter();
+   
+     let products = await apiFeature.query;
+   
+     let filteredProductsCount = products.length;
+   
+     apiFeature.pagination(resultPerPage);
+   
+     products = await apiFeature.query;
+   
      res.status(200).json({
-          success: true,
-          products
+       success: true,
+       products,
+       productsCount,
+       resultPerPage,
+       filteredProductsCount,
      });
-});
+   });
 
 
 exports.updateProduct = catchAsyncError(async(req, res, next)=>{
@@ -76,3 +107,4 @@ exports.getProductDetails = catchAsyncError(async (req, res, next) => {
           product
      });
 });
+
