@@ -1,0 +1,8 @@
+Install the express generator in using the command 
+     npm install -g express-generator
+
+Install Express Application run this command
+     npx express --view=ejs nodeapp
+
+Install dependencies using the following command
+     npm install
