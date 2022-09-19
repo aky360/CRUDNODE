@@ -20,3 +20,8 @@ if(10>2){
     console.log(y);  //34
 }
 console.log(y)    // 34
+
+
+var z;
+console.log(z);             //undefined
+console.log(typeof z)       //undefined
